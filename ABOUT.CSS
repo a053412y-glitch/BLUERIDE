@@ -1,0 +1,205 @@
+/* יבוא פונטים שובבים, נוסטלגיים ומלאי אקשן מגוגל פונטס */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Rubik+Bubbles&family=Assistant:wght@600;800&display=swap');
+
+/* ==========================================
+   הגדרות בסיסיות ורקע העמוד
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.about-page-body {
+    font-family: 'Assistant', sans-serif;
+    background-color: #0077be;
+    background-image: linear-gradient(rgba(0, 70, 130, 0.4), rgba(5, 20, 45, 0.75)), 
+                      url('blueride-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    min-height: 100vh;
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================
+   סרגל ניווט עליון - קטגוריות ממורכזות
+   ========================================== */
+.about-navbar {
+    width: 100%;
+    height: 85px;
+    background: rgba(6, 18, 36, 0.85);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid rgba(0, 242, 254, 0.4);
+}
+
+.about-nav-logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: #fff;
+}
+
+.about-nav-logo span { color: #facc15; }
+
+.about-nav-center {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-grow: 1; 
+}
+
+.about-nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0 auto; 
+}
+
+.about-nav-menu a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 17px;
+    padding: 8px 22px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.about-nav-menu a:hover, .about-nav-menu a.active-page {
+    color: #facc15;
+    background: rgba(250, 204, 21, 0.1);
+    border-color: #facc15;
+}
+
+.about-nav-spacer {
+    width: 120px; 
+}
+
+/* ==========================================
+   אזור התוכן המרכזי (ללא המלבן הכהה!)
+   ========================================== */
+.about-main-container {
+    padding: 50px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 140px; 
+}
+
+.generic-content-box {
+    background: transparent; 
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.generic-content-box h2 {
+    font-family: 'Rubik Bubbles', 'Comic Sans MS', cursive; 
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(0, 242, 254, 0.9);
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+/* הגדרות פונט אקשן נוסטלגי וצמצום רווחים */
+.about-text-content p {
+    font-family: 'Rubik Dirt', 'Impact', sans-serif; 
+    font-size: 1.4rem;
+    line-height: 1.3; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+    text-align: right;
+    margin-bottom: 18px; 
+    letter-spacing: 1px;
+}
+
+/* צביעת כל פסקה בצבע שובב אחר באופן אוטומטי */
+.about-text-content p:nth-child(1) { color: #facc15; } 
+.about-text-content p:nth-child(2) { color: #00f2fe; } 
+.about-text-content p:nth-child(3) { color: #ff007f; } 
+.about-text-content p:nth-child(4) { color: #facc15; } 
+.about-text-content p:nth-child(5) { color: #00f2fe; } 
+.about-text-content p:nth-child(6) { color: #ff007f; } 
+
+/* ==========================================
+   אזור הקישורים החדש בתחתית
+   ========================================== */
+.about-cta-section {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.about-cta-section h3 {
+    font-family: 'Rubik Bubbles', cursive; /* פונט אחר, גדול וברור! */
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 0 15px #ff007f, 0 0 30px #ff007f;
+    margin-bottom: 30px;
+    animation: pulse 1.5s infinite alternate;
+}
+
+.about-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    font-family: 'Secular One', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 16px;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.order-now-btn {
+    background: linear-gradient(135deg, #ff007f, #ff5500);
+    color: #fff;
+    border: 2px solid #ff007f;
+}
+
+.reviews-btn {
+    background: linear-gradient(135deg, #00f2fe, #0055ff);
+    color: #fff;
+    border: 2px solid #00f2fe;
+}
+
+.cta-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    filter: brightness(1.2);
+    box-shadow: 0 10px 25px rgba(0, 242, 254, 0.4);
+}
+
+#topBtn {
+    display: none; 
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    font-size: 20px;
+    border: 1px solid #00f2fe;
+    outline: none;
+    background-color: rgba(0, 119, 190, 0.8);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50px;
+    transition: 0.4s;
+}
+
+#topBtn:hover { background-color: #00f2fe; color: #000; }

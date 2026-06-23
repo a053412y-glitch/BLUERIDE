@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueRide - עמוד הזמנות בכנרת</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700;800&family=Poppins:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="order.css">
+</head>
+<body class="order-page-body">
+
+    <nav class="order-navbar">
+        <div class="order-nav-logo">Blue<span>Ride</span></div>
+        <div class="order-nav-center">
+            <ul class="order-nav-menu">
+                <li><a href="HOME.html">דף הבית</a></li>
+                <li><a href="order.html" class="active-page">הזמנות</a></li>
+                <li><a href="testimonials.html">לקוחות מספרים</a></li>
+                <li><a href="about.html">אודות</a></li>
+            </ul>
+        </div>
+        <div class="order-nav-spacer"></div>
+    </nav>
+
+    <main class="order-main-container">
+        <div class="order-header-section">
+            <h1>הזמנת אטרקציות - BlueRide</h1>
+            <p>בחרו את הפעילויות המטורפות שלכם על מי הכנרת המרעננים</p>
+        </div>
+
+        <div class="order-cards-grid">
+
+            <div class="order-square-card order-banana">
+                <div class="order-image-box">
+                    <img src="banana.jpg" alt="בננה אקסטרים">
+                    <span class="order-card-tag">פופולרי!</span>
+                </div>
+                <div class="order-body-box">
+                    <h3>בננה אקסטרים</h3>
+                    <div class="order-info-text">גיל 6 ומעלה | <span class="order-price-value">₪50</span></div>
+                    <div class="order-qty-wrapper">
+                        <label>משתתפים:</label>
+                        <input type="number" id="qty-banana" class="order-quantity-field" min="0" value="0">
+                    </div>
+                    <button class="order-add-btn" onclick="processOrder('בננה אקסטרים', 'qty-banana', 50)">הוסף לסל</button>
+                </div>
+            </div>
+
+            <div class="order-square-card order-tube">
+                <div class="order-image-box">
+                    <img src="tube.jpg" alt="אבוב שכיבה">
+                    <span class="order-card-tag">מהיר במיוחד</span>
+                </div>
+                <div class="order-body-box">
+                    <h3>אבוב שכיבה מטורף</h3>
+                    <div class="order-info-text">גיל 8 ומעלה | <span class="order-price-value">₪60</span></div>
+                    <div class="order-qty-wrapper">
+                        <label>משתתפים:</label>
+                        <input type="number" id="qty-tube" class="order-quantity-field" min="0" value="0">
+                    </div>
+                    <button class="order-add-btn" onclick="processOrder('אבוב שכיבה', 'qty-tube', 60)">הוסף לסל</button>
+                </div>
+            </div>
+
+            <div class="order-square-card order-family">
+                <div class="order-image-box">
+                    <img src="family.jpg" alt="ספת אבובים">
+                    <span class="order-card-tag">משפחתי</span>
+                </div>
+                <div class="order-body-box">
+                    <h3>ספת אבובים קבוצתית</h3>
+                    <div class="order-info-text">גיל 4 ומעלה | <span class="order-price-value">₪55</span></div>
+                    <div class="order-qty-wrapper">
+                        <label>משתתפים:</label>
+                        <input type="number" id="qty-family" class="order-quantity-field" min="0" value="0">
+                    </div>
+                    <button class="order-add-btn" onclick="processOrder('ספת אבובים', 'qty-family', 55)">הוסף לסל</button>
+                </div>
+            </div>
+
+            <div class="order-square-card order-jetski">
+                <div class="order-image-box">
+                    <img src="jetski.jpg" alt="אופנוע ים סילון">
+                    <span class="order-card-tag">כוח מטורף</span>
+                </div>
+                <div class="order-body-box">
+                    <h3>אופנוע ים סילון</h3>
+                    <div class="order-info-text">גיל 16 ומעלה | <span class="order-price-value">₪120</span></div>
+                    <div class="order-qty-wrapper">
+                        <label>משתתפים:</label>
+                        <input type="number" id="qty-jetski" class="order-quantity-field" min="0" value="0">
+                    </div>
+                    <button class="order-add-btn" onclick="processOrder('אופנוע ים סילון', 'qty-jetski', 120)">הוסף לסל</button>
+                </div>
+            </div>
+
+            <div class="order-square-card order-tornado">
+                <div class="order-image-box">
+                    <img src="tor.jpg" alt="ספינת טורנדו מהירה">
+                    <span class="order-card-tag">אקסטרים סילון</span>
+                </div>
+                <div class="order-body-box">
+                    <h3>ספינת טורנדו מהירה</h3>
+                    <div class="order-info-text">גיל 6 ומעלה | <span class="order-price-value">₪70</span></div>
+                    <div class="order-qty-wrapper">
+                        <label>משתתפים:</label>
+                        <input type="number" id="qty-tornado" class="order-quantity-field" min="0" value="0">
+                    </div>
+                    <button class="order-add-btn" onclick="processOrder('ספינת טורנדו מהירה', 'qty-tornado', 70)">הוסף לסל</button>
+                </div>
+            </div>
+
+            <div class="order-square-card order-speedboat">
+                <div class="order-image-box">
+                    <img src="speedboat.jpg" alt="סירת ספורט מהירה">
+                    <span class="order-card-tag">חווית VIP</span>
+                </div>
+                <div class="order-body-box">
+                    <h3>סירת ספורט מהירה</h3>
+                    <div class="order-info-text">לכל המשפחה | <span class="order-price-value">₪80</span></div>
+                    <div class="order-qty-wrapper">
+                        <label>משתתפים:</label>
+                        <input type="number" id="qty-speedboat" class="order-quantity-field" min="0" value="0">
+                    </div>
+                    <button class="order-add-btn" onclick="processOrder('סירת ספורט מהירה', 'qty-speedboat', 80)">הוסף לסל</button>
+                </div>
+            </div>
+
+            <div class="order-square-card order-cruise">
+                <div class="order-image-box">
+                    <img src="cruise.jpg" alt="ספינת אליזבת">
+                    <span class="order-card-tag">אירועים וחוויה</span>
+                </div>
+                <div class="order-body-box">
+                    <h3>ספינת "אליזבת"</h3>
+                    <div class="order-info-text">כל הגילאים | <span class="order-price-value">₪40</span></div>
+                    <div class="order-qty-wrapper">
+                        <label>משתתפים:</label>
+                        <input type="number" id="qty-cruise" class="order-quantity-field" min="0" value="0">
+                    </div>
+                    <button class="order-add-btn" onclick="processOrder('ספינת אליזבת', 'qty-cruise', 40)">הוסף לסל</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="order-summary-bar">
+        <div class="order-summary-title">סיכום הבחירה שלך:</div>
+        <div class="order-summary-counter">כרטיסים: <span id="total-tickets">0</span></div>
+        <div class="order-summary-counter">סה"כ לתשלום: <span id="total-cost">₪0</span></div>
+    </div>
+
+    <script src="order.js"></script>
+</body>
+</html>

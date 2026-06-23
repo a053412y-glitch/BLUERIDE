@@ -1,0 +1,352 @@
+/* ==========================================
+   1. הגדרות כלליות ועיצוב הרקע של דף ה-Order
+   ========================================== */
+   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.order-page-body {
+    font-family: 'Assistant', sans-serif;
+    background-color: #0077be;
+    background-image: linear-gradient(rgba(0, 70, 130, 0.5), rgba(5, 20, 45, 0.75)), 
+                      url('blueride-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================
+   2. סרגל ניווט אקסטרים אחיד (עבור כל העמודים)
+   ========================================== */
+.order-navbar {
+    width: 100%;
+    height: 95px;
+    background: rgba(6, 18, 36, 0.85); /* רקע כהה עמוק */
+    backdrop-filter: blur(20px); /* אפקט זכוכית יוקרתי */
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid rgba(0, 242, 254, 0.4); /* קו תחתון ציאן זוהר */
+    box-shadow: 0 4px 30px rgba(0, 242, 254, 0.15);
+}
+
+.order-nav-logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    flex: 1;
+    text-shadow: 0 0 15px rgba(0, 242, 254, 0.8), 0 0 30px rgba(0, 242, 254, 0.4);
+}
+
+.order-nav-logo span {
+    color: #facc15; /* דגש צהוב שמש */
+    text-shadow: 0 0 15px rgba(250, 204, 21, 0.8);
+}
+
+.order-nav-center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.order-nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* מרווח בין כפתורי הניווט */
+}
+
+/* כפתורי הניווט בעיצוב האקשן הנדיר */
+.order-nav-menu a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 18px;
+    padding: 10px 24px;
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    white-space: nowrap;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* אפקט ריחוף מלא אדרנלין */
+.order-nav-menu a:hover, .order-nav-menu a.active-page {
+    color: #facc15;
+    background: rgba(250, 204, 21, 0.08);
+    border-color: rgba(250, 204, 21, 0.4);
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.2);
+    text-shadow: 0 0 8px rgba(250, 204, 21, 0.6);
+}
+
+/* קו הניאון הדינמי שנדלק מתחת לכפתור הפעיל/המרוחף */
+.order-nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background: #facc15;
+    box-shadow: 0 0 12px #facc15, 0 0 25px #facc15;
+    border-radius: 10px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.order-nav-menu a:hover::after, .order-nav-menu a.active-page::after {
+    width: 70%;
+    left: 15%;
+}
+
+.order-nav-spacer {
+    flex: 1; /* סימטריה */
+}
+
+/* ==========================================
+   3. אזור התוכן הראשי - פריסה ומרווחים
+   ========================================== */
+.order-main-container {
+    flex-grow: 1;
+    padding: 60px 40px 160px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.order-header-section {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.order-header-section h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.order-header-section p {
+    font-size: 21px;
+    color: #f0f9ff;
+    opacity: 0.95;
+}
+
+/* מיכל הגריד המרווח */
+.order-cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+}
+
+/* ==========================================
+   4. עיצוב כרטיסים בצורת ריבוע גדול וזוהר
+   ========================================== */
+.order-square-card {
+    background: rgba(11, 26, 47, 0.85);
+    border-radius: 26px;
+    overflow: hidden;
+    width: 400px;
+    height: 400px;
+    display: grid;
+    grid-template-rows: 1.2fr 1fr;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.order-image-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.order-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.order-square-card:hover .order-image-box img {
+    transform: scale(1.08);
+}
+
+.order-body-box {
+    padding: 22px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-body-box h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.order-info-text {
+    font-size: 1.05rem;
+    color: #e0f2fe;
+}
+
+.order-price-value {
+    font-weight: 900;
+    font-size: 1.4rem;
+}
+
+.order-qty-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-qty-wrapper label {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.order-quantity-field {
+    width: 65px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+    color: white;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.order-add-btn {
+    border: none;
+    padding: 12px 0;
+    width: 90%;
+    font-size: 1.05rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.order-card-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: bold;
+    z-index: 5;
+}
+
+/* זוהרי ניאון */
+.order-banana h3, .order-banana .order-price-value { color: #ff416c; }
+.order-banana .order-card-tag, .order-banana .order-add-btn { background: linear-gradient(45deg, #ff416c, #ff4b2b); color: white; }
+.order-banana { box-shadow: 0 10px 30px rgba(255, 65, 108, 0.15); }
+.order-banana:hover { border-color: #ff416c; box-shadow: 0 0 40px rgba(255, 65, 108, 0.7); transform: translateY(-10px); }
+
+.order-tube h3, .order-tube .order-price-value { color: #ff9f43; }
+.order-tube .order-card-tag, .order-tube .order-add-btn { background: linear-gradient(45deg, #ff9f43, #ff6b6b); color: white; }
+.order-tube { box-shadow: 0 10px 30px rgba(255, 159, 67, 0.15); }
+.order-tube:hover { border-color: #ff9f43; box-shadow: 0 0 40px rgba(255, 159, 67, 0.7); transform: translateY(-10px); }
+
+.order-family h3, .order-family .order-price-value { color: #2ecc71; }
+.order-family .order-card-tag, .order-family .order-add-btn { background: linear-gradient(45deg, #2ecc71, #00ea97); color: #052e16; }
+.order-family { box-shadow: 0 10px 30px rgba(46, 204, 113, 0.15); }
+.order-family:hover { border-color: #2ecc71; box-shadow: 0 0 40px rgba(46, 204, 113, 0.7); transform: translateY(-10px); }
+
+.order-jetski h3, .order-jetski .order-price-value { color: #ff007f; }
+.order-jetski .order-card-tag, .order-jetski .order-add-btn { background: linear-gradient(45deg, #ff007f, #7928ca); color: white; }
+.order-jetski { box-shadow: 0 10px 30px rgba(255, 0, 127, 0.15); }
+.order-jetski:hover { border-color: #ff007f; box-shadow: 0 0 40px rgba(255, 0, 127, 0.7); transform: translateY(-10px); }
+
+.order-tornado h3, .order-tornado .order-price-value { color: #00ffaa; }
+.order-tornado .order-card-tag, .order-tornado .order-add-btn { background: linear-gradient(45deg, #00ffaa, #00b4d8); color: #03045e; }
+.order-tornado { box-shadow: 0 10px 30px rgba(0, 255, 170, 0.15); }
+.order-tornado:hover { border-color: #00ffaa; box-shadow: 0 0 40px rgba(0, 255, 170, 0.7); transform: translateY(-10px); }
+
+.order-speedboat h3, .order-speedboat .order-price-value { color: #00f2fe; }
+.order-speedboat .order-card-tag, .order-speedboat .order-add-btn { background: linear-gradient(45deg, #00f2fe, #4facfe); color: #002244; }
+.order-speedboat { box-shadow: 0 10px 30px rgba(0, 242, 254, 0.15); }
+.order-speedboat:hover { border-color: #00f2fe; box-shadow: 0 0 40px rgba(0, 242, 254, 0.7); transform: translateY(-10px); }
+
+.order-cruise h3, .order-cruise .order-price-value { color: #b5179e; }
+.order-cruise .order-card-tag, .order-cruise .order-add-btn { background: linear-gradient(45deg, #b5179e, #7209b7); color: white; }
+.order-cruise { box-shadow: 0 10px 30px rgba(181, 23, 158, 0.15); }
+.order-cruise:hover { border-color: #b5179e; box-shadow: 0 0 40px rgba(181, 23, 158, 0.7); transform: translateY(-10px); }
+
+/* ==========================================
+   5. עיצוב דפי תוכן כלליים (אודות, המלצות וכו')
+   ========================================== */
+.generic-content-box {
+    background: rgba(11, 26, 47, 0.85);
+    border-radius: 26px;
+    padding: 50px;
+    max-width: 900px;
+    width: 100%;
+    margin-top: 45px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.generic-content-box h2 {
+    font-size: 2.2rem;
+    color: #facc15;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(250, 204, 21, 0.4);
+}
+
+.generic-content-box p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #f0f9ff;
+}
+
+/* ==========================================
+   6. פס סיכום הזמנה צף בתחתית המסך
+   ========================================== */
+.order-summary-bar {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(11, 28, 54, 0.95);
+    padding: 16px 50px;
+    border-radius: 50px;
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    z-index: 1000;
+    border: 2px solid #00f2fe;
+    backdrop-filter: blur(8px);
+}
+
+.order-summary-title { font-size: 1.2rem; font-weight: 700; color: #fff; }
+.order-summary-counter { font-size: 1.3rem; font-weight: bold; color: #cbd5e1; }
+.order-summary-counter span { color: #facc15; font-size: 1.5rem; margin-right: 5px; text-shadow: 0 0 10px rgba(250, 204, 21, 0.5); }
+
