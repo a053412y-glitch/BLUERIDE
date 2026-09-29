@@ -1,1 +1,139 @@
-HOME.CSS
+/* ==========================================
+   1. הגדרות כלליות
+   ========================================== */
+   * { box-sizing: border-box; margin: 0; padding: 0; }
+
+   body.order-page-body {
+       font-family: 'Assistant', sans-serif;
+       background-color: #0077be;
+       background-image: linear-gradient(rgba(0, 70, 130, 0.5), rgba(5, 20, 45, 0.75)), url('blueride-bg.jpg');
+       background-size: cover;
+       background-position: center;
+       background-attachment: fixed;
+       color: #fff;
+       min-height: 100vh;
+       display: flex;
+       flex-direction: column;
+   }
+   
+   /* ==========================================
+      2. ניווט כחול וממורכז (מושלם)
+      ========================================== */
+   .order-navbar {
+       width: 100%;
+       height: 95px;
+       background: #0077be;
+       display: flex;
+       align-items: center;
+       justify-content: center; /* ממרכז את הלוגו והתפריט כאחד */
+       padding: 0 60px;
+       position: sticky;
+       top: 0;
+       z-index: 1000;
+       border-bottom: 3px solid rgba(0, 242, 254, 0.4);
+   }
+   
+   .order-nav-logo { 
+       font-family: 'Poppins', sans-serif; 
+       font-size: 32px; 
+       font-weight: 900; 
+       color: #fff; 
+       margin-left: 40px; /* רווח בין הלוגו לתפריט */
+   }
+   
+   .order-nav-logo span { color: #facc15; }
+   
+   .order-nav-center { display: flex; justify-content: center; }
+   
+   .order-nav-menu {
+       display: flex;
+       list-style: none;
+       gap: 20px;
+       align-items: center;
+   }
+   
+   .order-nav-menu a {
+       color: #e2e8f0; 
+       text-decoration: none; 
+       font-weight: 700; 
+       font-size: 18px;
+       padding: 12px 28px; 
+       border: 1px solid rgba(255, 255, 255, 0.2);
+       border-radius: 15px; 
+       transition: all 0.3s ease; 
+       background: rgba(255, 255, 255, 0.05);
+   }
+   
+   /* עיצוב כפתור פעיל */
+   .order-nav-menu a.active-page {
+       color: #facc15; 
+       border: 1px solid #facc15;
+       background: rgba(250, 204, 21, 0.1);
+       box-shadow: 0 0 15px rgba(250, 204, 21, 0.3);
+   }
+   
+   /* ==========================================
+      3. תוכן דף הבית
+      ========================================== */
+   .order-main-container {
+       flex-grow: 1; 
+       padding: 60px 40px; 
+       display: flex; 
+       flex-direction: column; 
+       align-items: center; 
+       max-width: 1440px; 
+       margin: 0 auto; 
+       width: 100%;
+   }
+   
+   .home-hero-container {
+       display: flex; 
+       flex-direction: column; 
+       align-items: center;
+       text-align: center; 
+       padding: 100px 20px;
+   }
+   
+   .glow-wild-title {
+       font-family: 'Rubik Doodle Shadow', cursive; 
+       font-size: 4.2rem;
+       margin-bottom: 15px; 
+       text-shadow: 0 0 15px rgba(0, 242, 254, 0.8);
+   }
+   
+   .glow-clear-subtitle {
+       font-size: 2.5rem; 
+       color: #facc15; 
+       margin-bottom: 50px;
+   }
+   
+   .action-kinneret-btn {
+       font-size: 1.5rem; 
+       font-weight: 800; 
+       color: #fff;
+       background: rgba(0, 119, 190, 0.4); 
+       padding: 16px 45px;
+       border-radius: 50px; 
+       border: 2px solid rgba(0, 242, 254, 0.7);
+       text-decoration: none; 
+       transition: 0.4s;
+   }
+   
+   .action-kinneret-btn:hover {
+       background: rgba(0, 242, 254, 0.25); 
+       box-shadow: 0 0 30px rgba(0, 242, 254, 0.6);
+   }
+   
+   /* ==========================================
+      4. פוטר
+      ========================================== */
+   .footer-bottom {
+       width: 100%; 
+       padding: 20px; 
+       text-align: center;
+       background: rgba(6, 18, 36, 0.9); 
+       color: #fff;
+       font-size: 0.9rem; 
+       border-top: 1px solid rgba(0, 242, 254, 0.3);
+       margin-top: auto;
+   }

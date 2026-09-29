@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Assistant:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="wheel.css">
+    <title>BlueRide - גלגל האקשן</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-menu">
+            <li><a href="home.html">דף הבית</a></li>
+                <li><a href="order.html">הזמנות</a></li>
+                <li><a href="wheel.html" class="active-page">גלגל המזל</a></li>
+                <li><a href="testimonials.html">לקוחות מספרים</a></li>
+                <li><a href="about.html">אודות</a></li>
+        </div>
+    </nav>
+
+    <div class="wheel-page-wrapper">
+        <div class="wheel-container" id="wheel-element">
+            <div class="wheel-slice" style="--i:0; --clr:#FF4D4D;"><span>בננה אקסטרים</span></div>
+            <div class="wheel-slice" style="--i:1; --clr:#FFB84D;"><span>אבוב שכיבה</span></div>
+            <div class="wheel-slice" style="--i:2; --clr:#2ECC71;"><span>ספינת טורנדו</span></div>
+            <div class="wheel-slice" style="--i:3; --clr:#FF6B9F;"><span>אופנוע ים</span></div>
+            <div class="wheel-slice" style="--i:4; --clr:#4DDAFF;"><span>סירת ספורט</span></div>
+            <div class="wheel-slice" style="--i:5; --clr:#F1C40F;"><span>ספינת אליזבת</span></div>
+            
+            <button class="spin-btn" id="spin-btn" onclick="spinTheWheel()">GO!</button>
+        </div>
+
+        <div class="result-area">
+            <h2 id="result-text">מוכנים להרפתקה? סובבו את הגלגל!</h2>
+        </div>
+    </div>
+
+    <script src="wheel.js"></script>
+</body>
+</html>
